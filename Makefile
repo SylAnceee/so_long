@@ -48,6 +48,5 @@ re: fclean all
 fclean: clean
 	rm -f $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
-#	$(MAKE) -C $(MLX_DIR) fclean
 
 .PHONY: all clean fclean re bonus

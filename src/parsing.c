@@ -6,11 +6,11 @@
 /*   By: abreuil <abreuil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:02:24 by abreuil           #+#    #+#             */
-/*   Updated: 2025/02/03 16:07:04 by abreuil          ###   ########.fr       */
+/*   Updated: 2025/02/11 18:19:48 by abreuil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/so_long.h"
+#include "../include/so_long.h"
 
 // read the file and return an array of strings with the content of the file
 int	check_map(t_parse *parse)

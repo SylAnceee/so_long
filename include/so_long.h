@@ -6,11 +6,11 @@
 /*   By: abreuil <abreuil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:31:33 by abreuil           #+#    #+#             */
-/*   Updated: 2025/01/30 00:54:50 by abreuil          ###   ########.fr       */
+/*   Updated: 2025/02/11 18:24:40 by abreuil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef SO_LONG_H
+#ifndef SO_LONG_H
 # define SO_LONG_H
 
 # include "../lib/mlx/mlx.h"
@@ -20,8 +20,8 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <time.h>
-#include <X11/X.h>
-#include <X11/Xlib.h>
+# include <X11/X.h>
+# include <X11/Xlib.h>
 
 typedef struct s_map
 {
@@ -47,20 +47,20 @@ typedef struct s_player
 	int			moves;
 	int			collect;
 	int			exit;
-	t_texture		textures;	
+	t_texture	textures;	
 }	t_player;
 
 typedef struct s_enemy
 {
-	int			x;
-	int			y;
-	int			dir;
-	int			index;
-	struct s_enemy	*next;
-	t_texture	textures;
+	int					x;
+	int					y;
+	int					dir;
+	int					index;
+	struct s_enemy		*next;
+	t_texture			textures;
 }	t_enemy;
 
-typedef struct	s_fps
+typedef struct s_fps
 {
 	int			fps;
 	int			frames;
@@ -79,7 +79,6 @@ typedef struct s_game
 	t_enemy		enemy;
 	t_enemy		*enemies;
 	t_fps		fps;
-	
 }	t_game;
 
 typedef struct s_sparse
@@ -97,10 +96,9 @@ typedef struct s_sparse
 	t_game		game;
 }	t_parse;
 
-
 int					check_map(t_parse *parse);
 int					valid_file(int argc, char **argv, t_parse *parse);
-int 				check_suffix(char *filename);
+int					check_suffix(char *filename);
 int					check_exist(char *str, t_parse *parse);
 int					check_map_rectangle(t_parse *parse);
 int					check_map_edges(t_parse *parse);

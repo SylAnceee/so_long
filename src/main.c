@@ -6,16 +6,25 @@
 /*   By: abreuil <abreuil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:36:29 by abreuil           #+#    #+#             */
-/*   Updated: 2025/02/03 16:20:59 by abreuil          ###   ########.fr       */
+/*   Updated: 2025/02/11 18:20:59 by abreuil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+/* 
+ * check_exist: Checks if the file exists and stores information
+ * in the parse struct.
+ * check_suffix: Ensures the file has the correct ".ber" extension.
+ * valid_file: Validates program arguments and the file's existence/suffix.
+ * parse_map: Verifies the map's format, edges, content, elements,
+ * and pathfinding.
+ * main: Entry point of the program, initializes and runs the game loop.
+ */
 
 int	check_exist(char *str, t_parse *parse)
 {
 	int		fd;
-	
+
 	fd = open(str, O_RDONLY);
 	if (fd < 0)
 		return (0);
@@ -23,6 +32,7 @@ int	check_exist(char *str, t_parse *parse)
 	parse -> file = str;
 	return (1);
 }
+
 int	check_suffix(char *str)
 {
 	int	i;
@@ -35,6 +45,7 @@ int	check_suffix(char *str)
 		return (0);
 	return (1);
 }
+
 int	valid_file(int ac, char **av, t_parse *parse)
 {
 	if (ac != 2)
@@ -45,6 +56,7 @@ int	valid_file(int ac, char **av, t_parse *parse)
 		return (0);
 	return (1);
 }
+
 int	parse_map(t_parse *parse)
 {
 	if (!check_map_rectangle(parse))

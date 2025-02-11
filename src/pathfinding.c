@@ -6,7 +6,7 @@
 /*   By: abreuil <abreuil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 00:08:12 by abreuil           #+#    #+#             */
-/*   Updated: 2025/02/03 15:38:47 by abreuil          ###   ########.fr       */
+/*   Updated: 2025/02/11 18:29:50 by abreuil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ char	**dup_map(t_parse parse)
 	map[i] = NULL;
 	return (map);
 }
-
+// this is a recursive function that will navigate through our map.
+// it will check if we are on a valid postion
+// if we collected everything
+// if exit is reachable
 int	pathfinding(t_parse *parse, int i, int j)
 {
 	if (i < 0 || j < 0 || i >= parse->lines
